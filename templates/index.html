@@ -213,7 +213,7 @@
         <br><br>
         <div class="content">
             <div class="frm">
-                <form action="">
+                <form action="{% url 'sendMail' %}" method="post"> {% csrf_token %}
                     <input class="" type="text" placeholder="Name" name="name"><br><br>
                     <input type="text" placeholder="Contact Number" name="phone"><br><br>
                     <input type="email" placeholder="Email" name="mail"><br><br>

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
+from home.email import E_HOST, E_HOST_PASSWORD, E_HOST_USER, E_PORT, E_USE_TLS
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -125,6 +127,13 @@ else:
     
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = E_HOST
+EMAIL_PORT = E_PORT
+EMAIL_HOST_USER = E_HOST_USER
+EMAIL_HOST_PASSWORD = E_HOST_PASSWORD
+EMAIL_USE_TLS = E_USE_TLS
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

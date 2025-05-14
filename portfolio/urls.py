@@ -19,10 +19,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from home.views import home_view
+from home.views import home_view, s_mail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
+    path('send_email/', s_mail, name = 'sendMail'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
